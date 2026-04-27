@@ -33,3 +33,9 @@ async def flipcoin(ctx):
 @bot.command()
 async def joined(ctx, *, member: discord.Member):
     await ctx.send(f'{member} joined on {member.joined_at}')
+
+@bot.command()
+async def repeat(ctx, times: int = 2, content = 'repeating'):
+    """Repeats a message multiple times."""
+    for i in range(times):
+        await ctx.send(content)
